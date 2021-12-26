@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}регистрация{% endblock %}
+
+{% block content %}
+<style type="text/css">h1{padding: 20px 0px 0px 500px;}</style>
+
+<form action = '' method="post">
+{% csrf_token %}
+<h1>
+<input  placeholder= 'введите email' class = 'reg' id = 'email' name = 'email'><br>
+<input  placeholder= 'введите password' class = 'reg' id = 'pas' name = 'passworg'><br>
+<button type="submit" name="click">CClic</button></h1> </form>
+<p>уже зарегестрированы? <a href='http://127.0.0.1:8000/user/logine'>Войти</a></p>
+
+
+
+
+
+
+{% endblock %}

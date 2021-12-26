@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Ввод данных{% endblock %}
+
+{% block content %}
+<h2>Введите данные<h2>
+
+<form action ='' method='post'>
+{% csrf_token %}
+<input  placeholder= 'введите имя' class = 'name' id = 'name' name = 'username'><br>
+<input  placeholder= 'введите Фамилию' class = 'last_name' id = 'last_name' name = 'last_name' value = 'пасхалка'><br>
+<input  placeholder= 'введите пол' class = 'pol' id = 'pol' name = 'pol'><br>
+<input  placeholder= 'введите возраст' class = 'year' id = 'year' name = 'year'><br>
+<input  placeholder= 'введите информацию о себе' class = 'info' id = 'info' name = 'info'><br>
+<input  placeholder= 'введите город' class = 'ville' id = 'ville' name = 'ville'><br>
+<input  placeholder= 'введите телефон' class = 'phone' id = 'phone' name = 'phone'><br>
+<button>Сохранить</button> </form>
+
+
+
+
+
+
+{% endblock %}

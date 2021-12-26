@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+
+<style>h1{padding: 20px 0px 0px 700px;}
+
+
+h2{padding: 20px 0px 0px 500px;}
+div{padding: 20px 0px 0px 500px;}</style>
+
+<h2>
+Друг нашелся!</h2><br>
+<div>
+<a href = 'http://127.0.0.1:8000/user/{{friend.user_prof_id}}'>{{friend.name}} {{friend.last_name}}</a><br>
+
+Лет: {{friend.year}}<br>
+Телефон: {{friend.phone}}<br>
+Город: {{friend.ville}}<br>
+
+</div>
+{% endblock %}

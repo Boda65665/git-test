@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Главная{% endblock %}</title>
+<script
+  src="https://code.jquery.com/jquery-2.2.4.js"
+  integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+  crossorigin="anonymous"></script>
+
+</head>
+<body>
+<style>p{padding: 10px 0px 0px 50px;
+</style>
+
+</script>
+<div id="min"></div>
+<meta id = 'ids' name = 'id' content=''>
+<h1></h1>
+<p><a href = 'http://127.0.0.1:8000/user/{{id}}'>Профиль</a></p> 
+<p><a href = 'http://127.0.0.1:8000/settings'>Настройки</a></p>
+<p><a href = 'http://127.0.0.1:8000'>месенджер</a></p>
+<p><a href = 'http://127.0.0.1:8000/user_searching'>Поиск друзья</a></p>
+<p>группы</p>
+<p>кошелек</p>
+<p>магазин</p>
+	<div></div>
+    {% block content %}Мой сайт{% endblock %}
+</body>
+</html>

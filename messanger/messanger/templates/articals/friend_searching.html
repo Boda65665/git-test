@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Статьи{% endblock %}
+
+{% block content %}
+<style type="text/css">h1{padding: 20px 0px 0px 500px;}</style>
+<h1>
+<form action="" method="post">
+	Авторизуйтесь!<br>
+    {% csrf_token %}
+    Найдите своих друзей!<br>
+    <input class='username' placeholder= 'введите username пользователя или его ноиер телефона' id = 'username' name = 'username'><br>
+    <input type="submit" value="Начать Поиск"></input><br>
+
+</form></h1>
+
+
+{% endblock %}

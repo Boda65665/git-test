@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+
+<style>h1{padding: 20px 0px 0px 700px;}
+
+
+h2{padding: 20px 0px 0px 500px;}
+div{padding: 20px 0px 0px 500px;}</style>
+
+<h1>{{user.name}} {{user.last_name}}</h1>
+
+<h2>Информация:<br>
+<img src="media/{{user.image}}">
+Телефон: {{user.phone}}<br>
+Ваш пол: {{user.pol}}<br>
+Вам лет: {{user.year}}<br>
+Ваш город: {{user.ville}}<br>
+О себе: {{user.o_sebe}}<br>
+
+</h2>
+DEFDER3eeeeeeeeeeeeeeeeeeeeee
+<div>
+<form action="" method="post">
+{% csrf_token %}
+<input  placeholder= 'введите название статьи' class = 'stats' id = 'name_stat' name = 'name_stat'><br>	
+<textarea placeholder = 'введите текст статьи' name="text_stat" cols="70" rows="10"></textarea></p>
+<button>Создать</button>
+</form>
+  
+
+
+</div>
+{% endblock %}

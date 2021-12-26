@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Email Sequriti{% endblock %}
+
+{% block content %}
+<style type="text/css">div{padding: 20px 0px 0px 500px;}
+</style>
+<div>
+	Вы ввели неверный код попробуйте еще раз!
+<form action="" method="post">
+{% csrf_token %}
+<input  placeholder= 'Введите код' class = 'stats' id = 'email_cod' name = 'cod'><br>	
+<button>Создать</button>
+</form></div>
+
+{% endblock %}

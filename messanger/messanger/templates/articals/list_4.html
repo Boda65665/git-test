@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Ввод данных{% endblock %}
+
+{% block content %}
+
+<h2>Измените данные!<h2>
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<input  placeholder= 'введите имя' class = 'name' id = 'name' name = 'username' value = '{{user.name}}'><br>
+
+<input  placeholder= 'введите Фамилию' class = 'last_name' id = 'last_name' name = 'last_name' value = {{user.last_name}}><br>
+<input  placeholder= 'введите пол М/Ж' class = 'pol' id = 'pol' name = 'pol' value = {{user.pol}}><br>
+<input  placeholder= 'введите возраст' class = 'year' id = 'year' name = 'year' value = {{user.year}}><br>
+<input  placeholder= 'введите информацию о себе' class = 'info' id = 'info' name = 'info' value = {{info}}><br>
+<input  placeholder= 'введите город' class = 'ville' id = 'ville' name = 'ville' value = {{user.ville}}><br>
+<input  placeholder= 'введите телефон' class = 'phone' id = 'phone' name = 'phone' value = {{user.phone}}><br>
+<input  placeholder= 'введите username' class = 'username' id = 'username' name = 'usernames' value = {{user.usernames}}><br>
+Сменить фото!
+    {{ form.as_p }}
+    
+<input type="submit" value="Submit"> </form>
+
+
+
+
+
+{% endblock %}

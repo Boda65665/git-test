@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% block title %}Профиль{% endblock %}
+
+{% block content %}
+
+<style>h1{padding: 20px 0px 0px 700px;}
+
+
+h2{padding: 20px 0px 0px 500px;}
+div{padding: 20px 0px 0px 500px;}
+.post{padding: 15px; /* Поля */
+    background: #E5D3BD; /* Цвет фона */
+    border: 2px solid #E81E25;} /* Параметры границы */
+
+.posts{padding: 20px 0px 0px 0px;
+}
+</style>
+
+<h1>{{user.name}} {{user.last_name}}</h1>
+
+<h2>Информация:<br>
+<p><img src="media/{{user.image}}"></p><br>
+{{id}}
+{{user.image}}
+Телефон: {{user.phone}}<br>
+Ваш пол: {{user.pol}}<br>
+Вам лет: {{user.year}}<br>
+Ваш город: {{user.ville}}<br>
+О себе: {{user.o_sebe}}<br>
+username: {{user.usernames}}
+</h2>
+<button class = 'but_com{{i.id}}'>Добавить в др!</button>
+<div>
+
+<form action="" method="post">
+{% csrf_token %}
+<input  placeholder= 'введите название статьи' class = 'stats' id = 'name_stat' name = 'name_stat'><br>	
+<textarea placeholder = 'введите текст статьи' name="text_stat" cols="70" rows="10"></textarea></p>
+<button>Создать</button>
+</form>
+{% if user.phone == '+375295149693' %}
+  			EDRFRFR
+  			{% else %}
+  			defdr
+  			{% endif %}
+
+
+<div class='posts'>{% if post %}
+	{% for i in post %}
+	<h3 class = 'post'>Пост:{{i.name_post}}<br>
+		Дата публикации:{{i.date_public}}<br>
+		Текст:{{i.text_post}}<br>
+		{% csrf_token %}
+		<textarea placeholder = 'введите коменнтарий' name="text_com" class = 'com{{i.id}}' cols="35" rows="5"></textarea></p>
+		<button class = 'but_com{{i.id}}'>оставить коменнтарий</button>
+		<meta name="csrf-token" content="{{ csrf_token }}">
+		<meta name = 'id' content="{{ user.user_prof_id }}">
+		<p>
+			<table>
+    {% for line in com %}
+        {% if line.id == i.id%}
+        	Name: <a href="http://127.0.0.1:8000/user/{{i.id}} ">{{line.name}}</a><br>
+        	text: {{line.text}}<br>
+        	date: {{line.date}}<br>
+            <br>
+
+        {% endif %}
+        
+    
+    {% endfor %}
+</table>
+		</p>
+
+		<script type="text/javascript">
+		document.getElementsByClassName('cls_btn').onclick = function(){
+        alert(this.id);
+    	};
+		$(document).ready(function(){
+
+		$('button.but_com{{i.id}}').on('click',function() {
+			var a =  $('textarea.com{{i.id}}').val();
+			var b = $('meta[name="csrf-token"]').attr('content');
+			var c = {{i.id}};
+			var id = $('meta[name="id"]').attr('content');
+			console.log(a,c);
+			$.ajax({
+  			method: "POST",
+  			url: "add_comment",
+
+  			data: {'text_com': a,'csrfmiddlewaretoken':b,'post_id': c,'id':id}
+
+		});
+		location.reload()
+		location.reload()
+
+		});
+		
+	});
+
+	
+</script>
+{{a}}
+	</h3>
+	{% endfor %}
+{% else %}
+diedide
+{% endif %}
+</div>
+{% endblock %}
