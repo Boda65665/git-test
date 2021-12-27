@@ -21,7 +21,7 @@ def user_searching(request):
     try:
         payload = jwt.decode(token, 'secret', algorithm=['HS256'])
     except jwt.ExpiredSignatureError:
-        return HttpResponse('Unauthenticatedehjbhs!')
+        return HttpResponse('Unauthenticatedegvfcdxhjbhs!')
     data = {'id':payload['id']}
     if request.method == 'POST':
         print(request.POST)
